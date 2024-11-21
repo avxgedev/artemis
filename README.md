@@ -6,13 +6,6 @@
 
 Artemis is a web store & information site for the **Unknown Network** developed by @avxgedev
 
-## Features
-
-- Multi Use Payment API
-- Live Seamless Store API (Launcher & Website)
-- Live Seamless News API (Launcher & Website)
-- Seamless Stripe Integration
-
 ## License
 
-**ArtemisV1 & ArtemisV2** are both under strict licensing and should only be distrubuted via the **Unknown Network**, any redistributing outside of this license is not prohibited.
+Free Use! (star repo)

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unknown Network</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @font-face {
+            font-family: 'BrutalType';
+            src: url('assets/fonts/BrutalType-Bold.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Stretch Pro';
+            src: url('assets/fonts/StretchPro.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'BrutalType', Arial, sans-serif;
+            background: url('assets/images/bglauncher.jpg') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            transition: opacity 1s ease-in-out;
+            z-index: -1;
+            opacity: 0;
+        }
+
+        .background.show {
+            opacity: 1;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            padding: 5px 20px;
+            height: 40px;
+            background-color: rgba(30, 30, 30, 1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            height: 25px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 10px;
+            margin-left: 15px;
+            margin: 0;
+        }
+
+        .nav-links li a {
+            font-family: 'Stretch Pro', Arial, sans-serif;
+            color: #000;
+            text-decoration: none;
+            font-size: 14px;
+            background-color: #ffcc00;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 10px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            background-color: #e6b800;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+        }
+
+        .hero {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 10px;
+        }
+
+        .hero h1 {
+            font-size: 6rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero p {
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            margin: 0;
+            padding: 5px 0;
+            position: relative;
+            top: -20px;
+        }
+
+        .cta-button {
+            margin-top: 10px;
+            padding: 15px 30px;
+            background-color: #ffcc00;
+            color: #000;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: 'Stretch Pro', Arial, sans-serif;
+            font-size: 20px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #e6b800;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+        }
+
+        .yellow-button {
+            background-color: #ffcc00;
+            color: #000;
+            font-family: 'Stretch Pro', Arial, sans-serif;
+            font-size: 14px;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .yellow-button:hover {
+            background-color: #e6b800;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+        }
+
+        .toggle-container {
+            position: absolute;
+            bottom: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            z-index: 2;
+        }
+
+        .toggle-circle {
+            width: 15px;
+            height: 15px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .toggle-circle:hover {
+            background-color: rgba(255, 255, 1);
+        }
+
+        .toggle-circle.active {
+            background-color: #ffcc00;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+        }
+
+        /* Mobile Styling */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .logo {
+                margin-bottom: 10px;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                gap: 5px;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .cta-button {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+
+            .toggle-container {
+                position: static;
+                margin-top: 20px;
+            }
+
+            /* Hamburger Menu */
+            .menu-icon {
+                display: block;
+                cursor: pointer;
+                color: #ffcc00;
+                font-size: 24px;
+                margin-left: auto;
+            }
+
+            .menu-icon.active + .nav-links {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="assets/images/logo.png" alt="im in your nightmares" class="logo">
+        <span class="menu-icon" onclick="toggleMenu()">☰</span>
+        <ul class="nav-links">
+            <li><a href="news.html">NEWS</a></li>
+            <li><a href="fnshop.html">ITEM SHOP</a></li>
+            <li><a href="store.html">STORE</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+        </ul>
+        <button class="yellow-button" onclick="window.location.href='launcher.html'">DOWNLOAD</button>
+    </header>
+
+    <div class="hero">
+        <h1 id="main-title">FORTNITE</h1>
+        <p id="description">Play Fortnite Battle Royale in its prime using the Unknown Launcher!</p>
+        <button class="cta-button" id="slideshow-button" onclick="window.location.href='fortnite.html'">PLAY NOW</button>
+        <button class="cta-button" onclick="window.location.href='fnshop.html'">ITEM SHOP</button>
+        <div class="toggle-container">
+            <div class="toggle-circle" onclick="changeBackground(0)"></div>
+            <div class="toggle-circle" onclick="changeBackground(1)"></div>
+            <div class="toggle-circle" onclick="changeBackground(2)"></div>
+        </div>
+    </div>
+
+    <div class="background show" id="background1" style="background-image: url('assets/images/fuckingwork.jpg');"></div>
+    <div class="background" id="background2" style="background-image: url('assets/images/UnrealTournament.png');"></div>
+    <div class="background" id="background3" style="background-image: url('assets/images/background-image3.jpg');"></div>
+
+    <script>
+        const backgrounds = [
+            {
+                id: 'background1',
+                title: 'FORTNITE',
+                buttonText: 'PLAY NOW',
+                description: 'Play Fortnite Battle Royale in its prime using the Unknown Launcher!'
+            },
+            {
+                id: 'background2',
+                title: 'UNREAL TOURNAMENT',
+                buttonText: 'COMING 2025',
+                description: 'Dive into the cult classic Unreal Tournament for some awesome 2017 action!'
+            },
+            {
+                id: 'background3',
+                title: 'ROCKET LEAGUE',
+                buttonText: 'COMING 2025',
+                description: 'Welcome to the high-powered hybrid of arcade-style soccer and vehicular mayhem!'
+            }
+        ];
+
+        let currentBackground = 0;
+        const toggleCircles = document.querySelectorAll('.toggle-circle');
+
+        function changeBackground(index) {
+            document.getElementById(backgrounds[currentBackground].id).classList.remove('show');
+            toggleCircles[currentBackground].classList.remove('active');
+            currentBackground = index;
+            document.getElementById(backgrounds[currentBackground].id).classList.add('show');
+            document.getElementById('main-title').textContent = backgrounds[currentBackground].title;
+            document.getElementById('description').textContent = backgrounds[currentBackground].description;
+            document.getElementById('slideshow-button').textContent = backgrounds[currentBackground].buttonText;
+            toggleCircles[currentBackground].classList.add('active');
+        }
+
+        function toggleMenu() {
+            document.querySelector('.menu-icon').classList.toggle('active');
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+
+        setInterval(() => {
+            const nextBackground = (currentBackground + 1) % backgrounds.length;
+            changeBackground(nextBackground);
+        }, 10000);
+    </script>
+</body>
+</html>

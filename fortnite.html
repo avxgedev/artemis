@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unknown Network</title>
+    <style>
+
+        @font-face {
+            font-family: 'BrutalType';
+            src: url('assets/fonts/BrutalType-Bold.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Stretch Pro';
+            src: url('assets/fonts/StretchPro.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        body {
+            font-family: 'BrutalType', Arial, sans-serif;
+            background: url('assets/images/bannerfn.jpg') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+
+        .navbar {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center; 
+            padding: 10px 20px;
+            position: absolute;
+            top: 0;
+            z-index: 10;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px; 
+            font-family: 'BrutalType', Arial, sans-serif;
+        }
+
+
+        .cta-button {
+            padding: 20px 40px;
+            background-color: #ffcc00;
+            color: #000;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: 'Stretch Pro', Arial, sans-serif;
+            font-size: 20px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button:hover {
+            background-color: #e6b800;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+        }
+
+
+        .png-slot {
+            position: absolute;
+            width: 500px; 
+            height: auto;
+            transition: transform 0.1s ease;
+        }
+
+        .png-slot.left {
+            left: 10%;
+            top: 50%;
+            transform: translateY(-90%);
+        }
+
+        .png-slot.right {
+            right: 5%;
+            top: 50%;
+            transform: translateY(-90%);
+        }
+
+
+        .video-container {
+            position: relative;
+            width: 90%;
+            max-width: 700px;
+            padding-top: 28.125%; 
+            margin: 20px 0;
+            z-index: 1;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="navbar">
+        <a href="index.html">BACK TO HOME PAGE</a>
+    </div>
+
+    <button class="cta-button" onclick="window.location.href='launcher.html'">DOWNLOAD LAUNCHER</button>
+
+
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/Vs9X5vim3vo" title="Battle Royale - Battle Pass Overview" allowfullscreen></iframe>
+    </div>
+
+    <img src="assets/images/jonesy.png" alt="Left PNG" class="png-slot left" id="left-slot">
+    <img src="assets/images/pink.png" alt="Right PNG" class="png-slot right" id="right-slot">
+
+    <script>
+
+        document.addEventListener('mousemove', (event) => {
+            const leftSlot = document.getElementById('left-slot');
+            const rightSlot = document.getElementById('right-slot');
+
+            const offsetX = (event.clientX - window.innerWidth / 2) * 0.02;
+            const offsetY = (event.clientY - window.innerHeight / 2) * 0.02;
+
+            leftSlot.style.transform = `translate(-30%, -50%) translate(${offsetX}px, ${offsetY}px)`;
+            rightSlot.style.transform = `translate(10%, -50%) translate(${offsetX * -1}px, ${offsetY}px)`;
+        });
+    </script>
+</body>
+</html>

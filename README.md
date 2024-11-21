@@ -1,6 +1,18 @@
-## Artemis
-![image](https://github.com/user-attachments/assets/c8a463f7-1253-45d6-a3d2-ad4bcd7febc1)
 
-# Information
+![fortnite-og-1900x600-2e436ee544e1 (1)](https://github.com/user-attachments/assets/d5c2f1a6-53d9-4be1-b4e7-3b5ffd43762a)
 
-**Artemis** is a website for the Unknown Network, as of now we arent releasing it and I will be rewriting it, so I figured id open source it!
+
+## Artemis **v2.1**
+
+Artemis is a web store & information site for the **Unknown Network** developed by @avxgedev
+
+## Features
+
+- Multi Use Payment API
+- Live Seamless Store API (Launcher & Website)
+- Live Seamless News API (Launcher & Website)
+- Seamless Stripe Integration
+
+## License
+
+**ArtemisV1 & ArtemisV2** are both under strict licensing and should only be distrubuted via the **Unknown Network**, any redistributing outside of this license is not prohibited.

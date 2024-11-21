@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNKN Store</title>
+    <style>
+        @font-face {
+            font-family: 'BrutalType';
+            src: url('assets/fonts/BrutalType-Bold.otf') format('opentype');
+        }
+        @font-face {
+            font-family: 'Stretch Pro';
+            src: url('assets/fonts/StretchPro.otf') format('opentype');
+        }
+
+        body {
+            font-family: 'BrutalType', Arial, sans-serif;
+            background: url('assets/images/bglauncher.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Slide-in animation */
+        .slide-in {
+            animation: slideIn 0.6s ease-out forwards;
+            opacity: 0; /* Initially hidden */
+            transform: translateX(100%);
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .store {
+            padding: 40px 20px;
+            text-align: center;
+            max-width: 1200px;
+            width: 100%;
+            overflow-y: auto; /* Enable vertical scrolling */
+            max-height: 80vh; /* Set a maximum height for the store */
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .store-title {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .store-description {
+            font-size: 18px;
+            color: #cccccc;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .store-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .item-holder {
+            text-align: center;
+            position: relative;
+            width: calc(33.33% - 20px); /* Ensuring consistent width */
+            min-width: 280px;
+            max-width: 360px;
+        }
+
+        .item-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s ease, filter 0.2s ease; 
+            filter: brightness(1);
+        }
+
+        .item-image:hover {
+            transform: scale(1.02);
+            filter: brightness(1.1);
+        }
+
+        .item-title {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .item-description {
+            font-size: 14px;
+            color: #cccccc;
+            margin-bottom: 10px;
+            min-height: 40px;
+        }
+
+        .item-price {
+            font-size: 16px;
+            color: #ffcc00;
+            font-weight: bold;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body class="slide-in">
+
+    <main class="store">
+        <h1 class="store-title">UNKNOWN</h1>
+        <p class="store-description">DLC & Add - On's</p>
+        <h1>3 Items Found</h1>
+        <div class="store-container">
+            <!-- First Item -->
+            <div class="item-holder">
+                <a href="anemone.html" class="item-link">
+                    <img src="assets/images/news2.jpg" alt="DLC Item 1" class="item-image">
+                </a>
+                <h2 class="item-title">Unknown Ultimate</h2>
+                <p class="item-description">Subscription Including Add - On's</p>
+                <p class="item-price">Currently Unavailable</p>
+            </div>
+
+            <!-- Second Item -->
+            <div class="item-holder">
+                <a href="psplus.html" class="item-link">
+                    <img src="assets/images/bluefella.jpg" alt="DLC Item 2" class="item-image">
+                </a>
+                <h2 class="item-title">PlayStation + Celebration Pack #1</h2>
+                <p class="item-description">Limited Time Bundle</p>
+                <p class="item-price">£3 | $3</p>
+            </div>
+
+            <!-- Third Item -->
+            <div class="item-holder">
+                <a href="anemone.html" class="item-link">
+                    <img src="assets/images/batman.jpg" alt="DLC Item 3" class="item-image">
+                </a>
+                <h2 class="item-title">Batman VS Superman Car Pack</h2>
+                <p class="item-description">Rocket League Bundle</p>
+                <p class="item-price">Currently Unavailable</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Unknown Network. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

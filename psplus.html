@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PS PLUS Celebration Pack #1</title>
+  <style>
+    @font-face {
+      font-family: 'StretchPro';
+      src: url('assets/fonts/StretchPro.otf') format('opentype');
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('assets/images/bglauncher.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Back button styling */
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      display: flex;
+      align-items: center;
+      color: #fff;
+      font-size: 1rem;
+      text-decoration: none;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      z-index: 10;
+    }
+
+    .back-button:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .back-button .arrow {
+      margin-right: 8px;
+      font-size: 1.2rem;
+    }
+
+    /* The content to slide out */
+    #content {
+      transition: transform 0.5s ease-out;
+      will-change: transform;
+    }
+
+    /* Slide out to the right */
+    .slide-out {
+      transform: translateX(100%);
+    }
+
+    .product-page {
+      display: flex;
+      flex-direction: row;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      box-sizing: border-box;
+    }
+
+    .image-slider {
+      flex: 1;
+      max-width: 600px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      margin-right: 40px;
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      height: auto;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    .slider-controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+
+    .slider-controls button {
+      background-color: rgba(0, 0, 0, 0.5);
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .slider-controls button:hover {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .product-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .logo {
+      width: 535px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .product-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .product-description {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+
+    .product-price {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #ffd700;
+      margin-bottom: 20px;
+    }
+
+    .get-button {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      font-family: 'StretchPro', sans-serif;
+      font-weight: bold;
+      color: #1b1b1b;
+      background-color: #ffd700;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+
+    .get-button::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 215, 0, 0.5);
+      border-radius: 5px;
+      filter: blur(8px);
+      z-index: -1;
+      transition: opacity 0.3s ease;
+    }
+
+    .get-button:hover::after {
+      opacity: 1;
+      filter: blur(12px);
+    }
+
+    .get-button:hover {
+      transform: scale(1.05);
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Back button -->
+  <a href="launcherstore.html" class="back-button" id="backButton">
+    <span class="arrow">&#8592;</span> Back to Store
+  </a>
+
+  <div id="content" class="product-page">
+    <div class="image-slider">
+      <img src="https://i.imgur.com/Fwb1isk.png" alt="Slide 1" class="slide active">
+      <img src="https://i.imgur.com/iByrwxB.png" alt="Slide 2" class="slide">
+      
+      <div class="slider-controls">
+        <button onclick="prevSlide()">&#10094;</button>
+        <button onclick="nextSlide()">&#10095;</button>
+      </div>
+    </div>
+
+    <div class="product-info">
+      <img src="https://pngimg.com/uploads/fortnite/fortnite_PNG25.png" alt="Logo" class="logo">
+
+      <div class="product-title">PlayStation Plus Celebration Pack #1</div>
+      <div class="product-description">
+        PlayStation Plus Celebration Pack 1 is a Rare Limited Time Offer in Fortnite, that could have been obtained by purchasing PlayStation Plus subscription during Season 2.
+      </div>
+      <div class="product-price">£3</div>
+      
+      <button class="get-button">UNAVAILABLE</button>
+    </div>
+  </div>
+
+  <script>
+    // Slide out animation function
+    function slideOutPage() {
+      const content = document.getElementById('content');
+      const backButton = document.getElementById('backButton');
+      content.classList.add('slide-out');
+
+      // Add event listener for animation end to trigger redirect
+      content.addEventListener('transitionend', function() {
+        window.location.href = 'launcherstore.html';
+      }, { once: true });
+    }
+
+    // Attach the slide out animation to the back button
+    document.getElementById('backButton').addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent default link behavior
+      slideOutPage();
+    });
+
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+  </script>
+
+</body>
+</html>

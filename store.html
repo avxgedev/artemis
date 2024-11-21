@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNKN Store</title>
+    <style>
+        @font-face {
+            font-family: 'BrutalType';
+            src: url('assets/fonts/BrutalType-Bold.otf') format('opentype');
+        }
+        @font-face {
+            font-family: 'Stretch Pro';
+            src: url('assets/fonts/StretchPro.otf') format('opentype');
+        }
+
+        body {
+            font-family: 'BrutalType', Arial, sans-serif;
+            background: url('assets/images/bglauncher.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            overflow: hidden;
+            min-height: 100vh;
+        }
+
+        header {
+            width: 100%;
+            padding: 10px;
+            height: 50px;
+            background-color: rgba(30, 30, 30, 0.8);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            height: 25px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+        }
+
+        .menu-icon div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+            transition: 0.4s;
+        }
+
+        .store {
+            padding: 40px 20px 20px;
+            text-align: center;
+            max-width: 1200px;
+            width: 100%;
+            flex: 1;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .store-title {
+            font-size: 28px;
+            margin-bottom: 10px; 
+            color: #ffffff;
+        }
+
+        .store-description {
+            font-size: 18px; 
+            color: #cccccc; 
+            margin-bottom: 30px; 
+            max-width: 800px; 
+            margin-left: auto; 
+            margin-right: auto;
+        }
+
+        .store-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .item-holder {
+            text-align: center;
+            position: relative;
+            width: calc(25% - 20px);
+        }
+
+        .item-image {
+            width: 100%;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s ease, filter 0.2s ease;
+            display: block;
+            margin: 0 auto;
+            filter: brightness(1);
+        }
+
+        .item-image:hover {
+            transform: scale(1.02);
+            filter: brightness(1.1);
+        }
+
+        .item-title {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .item-description {
+            font-size: 14px;
+            color: #cccccc;
+            margin-bottom: 10px;
+            min-height: 40px;
+        }
+
+        .item-price {
+            font-size: 16px;
+            color: #ffcc00;
+            font-weight: bold;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: rgba(30, 30, 30, 0.8);
+            color: #fff;
+            width: 100%;
+            position: relative;
+            bottom: 0;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .store-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .item-holder {
+                width: 80%;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html">
+            <img src="assets/images/logo.png" alt="Logo" class="logo">
+        </a>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+
+    <main class="store">
+        <h1 class="store-title">UNKNOWN</h1>
+        <p class="store-description">DLC & Add - On's</p>
+        <h1>1 Item Found</h1>
+        <div class="store-container">
+            <div class="item-holder">
+                <a href="anemone.html" class="item-link">
+                    <img src="assets/images/item1.png" alt="DLC Item 1" class="item-image">
+                </a>
+                <h2 class="item-title">Anemone Plus</h2>
+                <p class="item-description">Subscription Including Add - On's</p>
+                <p class="item-price">Item Currently Not Purchasable</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Unknown Network. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

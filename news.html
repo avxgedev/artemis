@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNKN | News Board</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+     
+        @font-face {
+            font-family: 'BrutalType';
+            src: url('assets/fonts/BrutalType-Bold.otf') format('opentype');
+        }
+        @font-face {
+            font-family: 'Stretch Pro';
+            src: url('assets/fonts/StretchPro.otf') format('opentype');
+        }
+
+        body {
+            font-family: 'BrutalType', Arial, sans-serif;
+            background: url('assets/images/bglauncher.jpg') no-repeat center center fixed; /* Set the background image */
+            background-size: cover; 
+            margin: 0;
+            color: white; 
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            width: 100%;
+            padding: 10px;
+            height: 30px;
+            background-color: rgba(30, 30, 30, 0.8);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            height: 25px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .news-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(50, 50, 50, 0.8);
+            border-radius: 10px;
+            z-index: 1; 
+        }
+
+        .news-article {
+            margin-bottom: 30px;
+            padding: 15px;
+            border-bottom: 1px solid #444;
+        }
+
+        .news-article h2 {
+            font-size: 1.8rem;
+            color: #ffcc00;
+        }
+
+        .news-article p {
+            font-size: 1rem;
+            color: #ddd; 
+        }
+
+        .news-image {
+            width: 100%; 
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            margin-top: auto; 
+            text-align: center;
+            color: #777;
+            font-size: 0.9rem;
+            padding: 20px 0; 
+            z-index: 1; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="assets/images/logo.png" alt="Logo" class="logo">
+        </a>
+    </header>
+
+    <div class="news-container">
+        <h1>UNKN News Board!</h1>
+        <h1>Read up on Unknown Updates!</h1>
+        <div class="news-article">
+            <img src="assets/images/news1.jpg" alt="Update Image" class="news-image">
+            <h2>Rocket League</h2>
+            <p>We are happy to officially announce Rocket League as one of our games, this will bring all 2018 RL Glory!</p>
+        </div>
+
+        <div class="news-article">
+            <img src="assets/images/news2.jpg" alt="Collaboration Event" class="news-image">
+            <h2>Anemone + rebranding to UNKN Ultimate!</h2>
+            <p>UNKN Ultimate will be coming soon to our services with epic perks for subscribers!</p>
+            <p>Stay tuned for more information!</p>
+        </div>
+
+        <div class="news-article">
+            <img src="assets/images/news3.jpg" alt="Season Finale" class="news-image">
+            <h2>UNKN Christmas Winterfest!</h2>
+            <p>UNKN Winterfest is coming up soon with release of our Fortnite services!</p>
+            <p>This brings awesome map changes and the wonderful Season 2 Battle Pass!</p> 
+            <p>The Battle Pass will be completable via XP and the more you play you will level up!</p>      
+            <p>View Patch Notes Here | https://fortnite.fandom.com/wiki/Update_v1.11</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 UNKN. All rights reserved.
+    </div>
+</body>
+</html>

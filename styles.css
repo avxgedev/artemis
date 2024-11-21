@@ -1,0 +1,180 @@
+/* Load BrutalType-Regular and Stretch Pro fonts */
+@font-face {
+    font-family: 'BrutalType';
+    src: url('../assets/fonts/BrutalType-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Stretch Pro';
+    src: url('../assets/fonts/StretchPro-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Global styles */
+body {
+    font-family: 'BrutalType', Arial, sans-serif;
+    background: url('../assets/images/background-image.jpg') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    margin: 0;
+    height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scroll on mobile */
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: 50px;
+    background-color: #1e1e1e;
+    position: relative;
+    z-index: 1;
+}
+
+/* Nav links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+.nav-links li a {
+    font-family: 'BrutalType', Arial, sans-serif;
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    padding: 5px 10px;
+}
+
+.nav-links li a:hover {
+    text-decoration: underline;
+}
+
+/* Hero section */
+.hero {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px; /* Padding for better spacing on mobile */
+}
+
+.hero h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* CTA Button */
+.cta-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #e60023;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Section */
+.section {
+    padding: 40px 20px;
+}
+
+/* Game grid */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Yellow button */
+.yellow-button {
+    background-color: #ffcc00;
+    color: #000;
+    font-family: 'Stretch Pro', Arial, sans-serif;
+    font-size: 14px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+    }
+
+    /* Stack navigation links on mobile */
+    .nav-links {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem; /* Reduce font size for mobile */
+    }
+
+    /* Adjust padding and margin */
+    .cta-button {
+        padding: 8px 16px;
+    }
+
+    /* Grid layout adjustment */
+    .game-grid {
+        grid-template-columns: 1fr; /* Single column layout for mobile */
+    }
+
+    /* Section padding adjustments */
+    .section {
+        padding: 20px 10px;
+    }
+
+    .yellow-button {
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem; /* Further reduce font size on very small screens */
+    }
+
+    .cta-button {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+    .yellow-button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    footer {
+        padding: 10px;
+        font-size: 12px;
+    }
+}

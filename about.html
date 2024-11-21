@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>History Page</title>
+  <style>
+    @font-face {
+      font-family: 'BrutalType';
+      src: url('assets/fonts/BrutalType-Bold.otf') format('opentype');
+    }
+    @font-face {
+      font-family: 'Stretch Pro';
+      src: url('assets/fonts/StretchPro.otf') format('opentype');
+    }
+
+    body {
+      font-family: 'BrutalType', Arial, sans-serif;
+      background: url('assets/images/bglauncher.jpg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: white;
+      overflow: hidden;
+    }
+
+    header {
+            width: 100%;
+            padding: 10px;
+            height: 30px;
+            background-color: rgba(30, 30, 30, 0.8);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+    .logo {
+      height: 25px;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .history-section {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 80px 20px 20px;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .history-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      background-color: rgba(26, 26, 26, 1);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      color: #333;
+    }
+
+    .history-item:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .image-slot {
+      flex: 1;
+      max-width: 45%;
+      padding: 10px;
+    }
+
+    .image-slot img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .text-content {
+      flex: 1;
+      max-width: 45%;
+      padding: 10px;
+      text-align: left;
+    }
+
+    .text-content h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .text-content p {
+      font-size: 16px;
+      margin-bottom: 15px;
+      color: #555;
+    }
+
+    .yellow-button {
+      background-color: #ffcc00;
+      color: #000;
+      font-family: 'Stretch Pro', Arial, sans-serif;
+      font-size: 16px;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .yellow-button:hover {
+      background-color: #e6b800;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html">
+      <img src="assets/images/logo.png" alt="Logo" class="logo">
+    </a>
+  </header>
+
+  <div class="history-section">
+    <div class="history-item">
+      <div class="image-slot">
+        <img src="assets/images/ogumlpicture.png" alt="History Image 1">
+      </div>
+      <div class="text-content">
+        <h2>Our Beginning.</h2>
+        <p>We got our start in an old Fortnite project called Paradigm, which was then closed down to begin the start of Unknown. Not too proud to say it but we did make that launcher in that image. But anyway! shortly after that image, isaac (ME!!) actually learnt how to make launchers, came up with a multi-game library, happy ever after!</p>
+        <button class="yellow-button" onclick="window.location.href='fortnite.html'">Join in!</button>
+      </div>
+    </div>
+
+    <div class="history-item">
+      <div class="text-content">
+        <h2>Our Current Focus!</h2>
+        <p>We are now doing multiple games inside of our custom Unknown Multiplayer Launcher, where you can access multiple titles such as Fortnite, Rocket League and Unreal Tournament, and thats with more to come, if you would like to play our titles, get our launcher down below! (It's not bad anymore!!)</p>
+        <button class="yellow-button" onclick="window.location.href='launcher.html'">GET UML</button>
+      </div>
+      <div class="image-slot">
+        <img src="assets/images/whatamelon.png" alt="History Image 2">
+      </div>
+    </div>
+  </div>
+</body>
+</html>

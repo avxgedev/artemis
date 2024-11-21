@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get UML</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+        @font-face {
+            font-family: 'BrutalType';
+            src: url('assets/fonts/BrutalType-Bold.otf') format('opentype');
+        }
+        @font-face {
+            font-family: 'Stretch Pro';
+            src: url('assets/fonts/StretchPro.otf') format('opentype');
+        }
+
+        body {
+            font-family: 'BrutalType', Arial, sans-serif;
+            background: url('assets/images/bglauncher.jpg') no-repeat center center fixed; 
+            background-size: cover; 
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; 
+            min-height: 100vh; 
+            color: white; 
+            overflow-y: auto; 
+        }
+
+        header {
+            width: 100%;
+            padding: 10px;
+            height: 30px;
+            background-color: rgba(30, 30, 30, 0.8);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            height: 25px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .hero {
+            text-align: center;
+            margin-top: 20px;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: #fff; 
+        }
+
+        .hero p {
+            color: #ddd; 
+            font-size: 1.2rem;
+        }
+
+        .download-button {
+            background-color: #ffcc00; 
+            color: #000;
+            font-family: 'Stretch Pro', Arial, sans-serif;
+            font-size: 20px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            z-index: 1; 
+        }
+
+        .download-button:hover {
+            background-color: #e6b800; 
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+
+        .image-container {
+            margin-top: 40px; 
+            position: relative;
+            z-index: 1; 
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            height: auto;
+        }
+
+        .image-container img {
+            max-width: 90%; 
+            height: auto;    
+            border: none;    
+            margin: 0;      
+            padding: 0;      
+            display: block;  
+        }
+
+        .footer {
+            margin-top: auto; 
+            text-align: center;
+            color: #777;
+            font-size: 0.9rem;
+            padding: 20px 0; 
+            z-index: 1; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="assets/images/logo.png" alt="Logo" class="logo">
+        </a>
+    </header>
+
+    <div class="hero">
+        <h1>Get Unknown for Windows!</h1>
+        <p>Get ready to relive your favorite games from the past!</p>
+        <button class="download-button" onclick="window.location.href='https://youtube.com/watch?v=dQw4w9WgXcQ'">NOT AVAILABLE!</button>
+    </div>
+
+   
+    <div class="image-container" id="image-container">
+        <img src="assets/images/launcherpng.png" alt="Your Image">
+    </div>
+
+    <div class="footer">
+        &copy; This website is owned and created by developers of the Unknown Network. All Rights Reserved.
+    </div>
+
+    <script>
+ 
+        const imageContainer = document.getElementById('image-container');
+        let offsetX = 0; 
+        let offsetY = 0; 
+        const maxOffset = 10; 
+
+        document.addEventListener('mousemove', (event) => {
+
+            const centerX = window.innerWidth / 2;
+            const centerY = window.innerHeight / 2;
+            offsetX = ((event.clientX - centerX) / centerX) * maxOffset; 
+            offsetY = ((event.clientY - centerY) / centerY) * maxOffset;
+
+
+            imageContainer.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+        });
+    </script>
+</body>
+</html>

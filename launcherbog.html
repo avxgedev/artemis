@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNKN | News Board</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @font-face {
+            font-family: 'BrutalType';
+            src: url('assets/fonts/BrutalType-Bold.otf') format('opentype');
+        }
+        @font-face {
+            font-family: 'Stretch Pro';
+            src: url('assets/fonts/StretchPro.otf') format('opentype');
+        }
+
+        body {
+            font-family: 'BrutalType', Arial, sans-serif;
+            background-color: #1e1e1e; /* Background color set to #1e1e1e */
+            margin: 0;
+            color: white; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden; /* No scrolling */
+        }
+
+        .news-container {
+            width: 1457px; /* Fixed width */
+            height: 800px; /* Fixed height */
+            display: flex; /* Flexbox to arrange articles next to each other */
+            justify-content: space-between; /* Distribute the articles evenly */
+            align-items: center; /* Center content vertically */
+            padding: 20px;
+            box-sizing: border-box;
+            gap: 20px; /* Add space between articles */
+            background-color: rgba(39, 41, 45, 0.9); /* Add background color for the box */
+            border: 5px solid #27292d; /* Border color set to #27292d */
+        }
+
+        .news-article {
+            width: 30%; /* Set each article's width */
+            background-color: rgba(50, 50, 50, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 20px;
+            box-sizing: border-box;
+            height: 90%; /* Reduce height of articles */
+            overflow: hidden; /* Prevent overflow within articles */
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffcc00;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .news-article h2 {
+            font-size: 1.6rem;
+            color: #ffcc00;
+            margin-bottom: 10px;
+        }
+
+        .news-article p {
+            font-size: 1rem;
+            color: #ddd; 
+            margin-bottom: 10px;
+        }
+
+        .news-image {
+            width: 100%; 
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: #777;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="news-container">
+        <div class="news-article">
+            <img src="assets/images/news1.jpg" alt="Update Image" class="news-image">
+            <h2>Rocket League</h2>
+            <p>We are happy to officially announce Rocket League as one of our games, this will bring all 2018 RL Glory!</p>
+        </div>
+
+        <div class="news-article">
+            <img src="assets/images/news2.jpg" alt="Collaboration Event" class="news-image">
+            <h2>Anemone + rebranding to UNKN Ultimate!</h2>
+            <p>UNKN Ultimate will be coming soon to our services with epic perks for subscribers!</p>
+            <p>Stay tuned for more information!</p>
+        </div>
+
+        <div class="news-article">
+            <img src="assets/images/news3.jpg" alt="Season Finale" class="news-image">
+            <h2>UNKN Christmas Winterfest!</h2>
+            <p>UNKN Winterfest is coming up soon with release of our Fortnite services!</p>
+            <p>This brings awesome map changes and the wonderful Season 2 Battle Pass!</p> 
+            <p>The Battle Pass will be completable via XP and the more you play you will level up!</p>      
+            <p>View Patch Notes Here | https://fortnite.fandom.com/wiki/Update_v1.11</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 UNKN. All rights reserved.
+    </div>
+</body>
+</html>
